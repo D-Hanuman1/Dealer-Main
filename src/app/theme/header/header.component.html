@@ -1,0 +1,37 @@
+<mat-toolbar class="matero-toolbar">
+  <button mat-icon-button class="matero-toolbar-button" *ngIf="showToggle"
+          (click)="toggleSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <button class="mat-focus-indicator mat-raised-button mat-button-base">
+    <span class="mat-button-wrapper"><a [routerLink]="['/adv-search']">Advance Search</a></span>
+    <span class="mat-ripple mat-button-ripple" ng-reflect-disabled="false" ng-reflect-centered="false" ng-reflect-trigger="[object HTMLButtonElement]"></span>
+    <span class="mat-button-focus-overlay"></span>
+  </button>
+
+  <app-branding *ngIf="showBranding"></app-branding>
+  <span fxFlex></span>
+
+  <!-- <app-github-button></app-github-button> -->
+
+  <button mat-icon-button class="matero-toolbar-button">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <!-- <button mat-icon-button class="matero-toolbar-button" fxHide.lt-sm -->
+          <!-- (click)="toggleFullscreen()"> -->
+    <!-- <mat-icon>fullscreen</mat-icon> -->
+  <!-- </button> -->
+
+  <app-notification fxHide.lt-sm></app-notification>
+
+  <!-- <app-translate></app-translate> -->
+
+  <app-user></app-user>
+
+  <!-- <button mat-icon-button class="matero-toolbar-button" fxHide.lt-sm -->
+          <!-- (click)="toggleSidenavNotice.emit()"> -->
+    <!-- <mat-icon>list</mat-icon> -->
+  <!-- </button> -->
+</mat-toolbar>

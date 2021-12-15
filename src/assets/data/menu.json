@@ -1,0 +1,45 @@
+{
+  "menu": [
+    {
+      "route": "dashboard",
+      "name": "dashboard",
+      "type": "link",
+      "icon": "dashboard",
+      "badge": {
+        "color": "red-500",
+        "value": "5"
+      }
+    },
+    {
+      "route": "lead-calling",
+      "name": "Lead Calling",
+      "type": "link",
+      "icon": "color_lens"
+    },
+    {
+      "route": "app-reminder",
+      "name": "Appontment Reminder Calling",
+      "type": "link",
+      "icon": "favorite"
+    },
+    {
+      "route": "not-vis-calling",
+      "name": "Not Visited Lead Calling",
+      "type": "link",
+      "icon": "lock"
+    },
+    {
+      "route": "old-lead-calling",
+      "name": "Old Lead calling",
+      "type": "link",
+      "icon": "image"
+    },
+    {
+      "route": "todaytask",
+      "name": "Today Task",
+      "type": "link",
+      "icon": "image"
+    }
+
+  ]
+}
