@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { ThemeModule } from './theme/theme.module';
-import { RoutesModule } from './routes/routes.module';
 import { SharedModule } from './shared/shared.module';
 import { FormlyConfigModule } from './formly-config.module';
 import { NgxPermissionsModule } from 'ngx-permissions';
@@ -22,6 +21,8 @@ import { appInitializerProviders } from '@core/initializers';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemDataService } from './shared/in-mem/in-mem-data.service';
+import { RoutesModule } from './routes/routes.module';
+import { PreviousRouteService } from './services/previous-route.service';
 
 // Required for AOT compilation
 export function TranslateHttpLoaderFactory(http: HttpClient) {
@@ -56,7 +57,7 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
   ],
   providers: [
     { provide: BASE_URL, useValue: environment.baseUrl },
-    httpInterceptorProviders,
+    httpInterceptorProviders,PreviousRouteService,
     appInitializerProviders,
   ],
   bootstrap: [AppComponent],

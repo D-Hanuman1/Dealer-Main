@@ -46,7 +46,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
-
 import { PaginatorI18nService } from '@shared/services/paginator-i18n.service';
 
 @NgModule({
