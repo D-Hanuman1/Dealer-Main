@@ -5,6 +5,7 @@ import { AdminLayoutComponent } from '../theme/admin-layout/admin-layout.compone
 import { AuthLayoutComponent } from '../theme/auth-layout/auth-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from '@core/authentication/auth.guard';
+import { MastersModule } from 'app/masters/masters.module';
 
 
 
@@ -32,6 +33,11 @@ const routes: Routes = [
     // children: [
     //   { path: 'login', component: LoginComponent },
     // ],
+  },
+  {
+    component: AdminLayoutComponent,
+    path: 'master',
+    loadChildren: () => MastersModule
   },
   // {
   //  path: 'login', loadChildren: () => LoginModule
