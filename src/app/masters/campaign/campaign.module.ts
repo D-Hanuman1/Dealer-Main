@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
+import { PublisherModule } from './cpublisher/publisher.module';
 import { SourceModule } from './csource/source.module';
 
 
@@ -9,6 +10,10 @@ export const baseRoutes: Routes = [
   {
     path: 'source',
     loadChildren: () => SourceModule
+  },
+  {
+    path: 'publisher',
+    loadChildren: () => PublisherModule
   },
 
 ];

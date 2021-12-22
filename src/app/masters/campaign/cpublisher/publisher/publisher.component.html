@@ -1,0 +1,165 @@
+<!-- <app-admin-dashboard></app-admin-dashboard> -->
+<div fxLayout="row wrap" class="matero-row">
+  <div fxFlex="100" fxFlex.lt-sm="100" class="matero-col">
+    <!-- <mat-card> -->
+      <!-- <mat-card-title>Source</mat-card-title> -->
+
+      <!-- <div class="col-md-12 col-sm-12 container"> -->
+        <div class="col-md-12 col-sm-12 row cont1">
+
+          <div class="card-title col-4 text-left">
+            <p id="PageModeText" class="_desktopView">Source ADD : </p>
+          </div>
+
+          <div class="card-title col-4 text-center">
+            <i class="fa fa-plus-circle" title="Add Source"></i>
+            <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color search"
+              aria-hidden="true" data-mat-icon-type="font" (click)="onSearch()" class="_cursor">search
+            </mat-icon>
+          </div>
+
+          <div class="card-title col-4 text-right">
+            <i class="fa fa-plus-circle" title="Add Source"></i>
+            <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+              aria-hidden="true" data-mat-icon-type="font" (click)="addNew()" class="_cursor">add_circle
+            </mat-icon>
+          </div>
+
+        </div>
+
+      <!-- <div fxLayout="row wrap" fxLayoutGap="8px grid">
+        <div fxFlex="33.33" fxFlex.lt-sm="100">
+          <div class="card-title">
+            <p id="PageModeText" class="_desktopView">Search Result : </p>
+          </div>
+        </div>
+
+          <div fxFlex="33.33" fxFlex.lt-sm="100">
+            <div style="margin-left: 150px;padding-top: 15px;">
+              <i class="fa fa-plus-circle" title="Add Source"></i>
+              <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+                aria-hidden="true" data-mat-icon-type="font" (click)=onSearch() class="_cursor">search
+              </mat-icon>
+            </div>
+          </div>
+
+            <div fxFlex="33.33" fxFlex.lt-sm="100">
+              <div style="float:right;padding-top: 15px;">
+                <i class="fa fa-plus-circle" title="Add Source"></i>
+                <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+                  aria-hidden="true" data-mat-icon-type="font" (click)="addNew()" class="_cursor">add_circle
+                </mat-icon>
+              </div>
+            </div>
+            </div> -->
+
+
+      <!-- <div fxLayout="row wrap" fxLayoutGap="8px grid">
+        <div fxFlex="33.33" fxFlex.lt-sm="100">
+          <div class="card-title col-4">
+            <p id="PageModeText" class="_desktopView" style="margin-bottom: 0;">Source&nbsp;[{{PageMode}}]</p>
+          </div>
+        </div>
+
+          <div fxFlex="33.33" fxFlex.lt-sm="100">
+            <div class="card-title col-4 text-left">
+              <i class="fa fa-plus-circle" title="Add Source"></i>
+              <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+                aria-hidden="true" data-mat-icon-type="font" (click)=onSearch() class="_cursor">search
+              </mat-icon>
+            </div>
+          </div>
+
+            <div fxFlex="33.33" fxFlex.lt-sm="100">
+              <div class="card-title col-4 text-right">
+                <i class="fa fa-plus-circle" title="Add Source"></i>
+                <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+                  aria-hidden="true" data-mat-icon-type="font" (click)="addNew()" class="_cursor">add_circle
+                </mat-icon>
+              </div>
+            </div>
+            </div> -->
+
+
+
+
+
+        <!-- <div class="card-title col-4 text-left"> -->
+          <!-- <p id="PageModeText" class="_desktopView" style="margin-bottom: 0;">Source&nbsp;[{{PageMode}}]</p> -->
+          <!-- <marquee scrolldelay="200" class="_mobileView">
+            <p id="PageModeText" style="margin-bottom: 0;">Source&nbsp;[{{PageMode}}]</p>
+          </marquee> -->
+        <!-- </div> -->
+        <!-- <div class="card-title col-4 text-left">
+          <i class="fa fa-plus-circle" title="Add Source"></i>
+          <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+            aria-hidden="true" data-mat-icon-type="font" (click)=onSearch() class="_cursor">search
+          </mat-icon>
+        </div>
+        <div class="card-title col-4 text-left">
+            <i class="fa fa-plus-circle" title="Add Source"></i>
+            <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+              aria-hidden="true" data-mat-icon-type="font" (click)="addNew()" class="_cursor">add_circle
+            </mat-icon>
+        </div> -->
+      <!-- <mat-card-title>Source</mat-card-title> -->
+      <form [formGroup]="formGroup" class="form-field-full">
+        <div fxLayout="row wrap" fxLayoutGap="8px grid" class="wrap">
+          <div fxFlex="50" fxFlex.lt-sm="50">
+            <mat-form-field  appearance="outline"  [ngClass]="{ 'mat-form-field-invalid': submitted && formGroup.get('DealerId')?.invalid }">
+              <mat-label>Dealer</mat-label>
+              <mat-select formControlName="DealerId" autocomplete="off" [ngClass]="{ 'mat-select-invalid': submitted && formGroup.get('DealerId')?.invalid }">
+                <mat-option>Select Dealer</mat-option>
+                <mat-option *ngFor="let _list of dealerList" [value]="_list.ID">{{_list.NAME}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="formGroup.get('DealerId')?.invalid && submitted">
+                Please select Dealer
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="50" >
+            <mat-form-field  appearance="outline" [ngClass]="{ 'mat-form-field-invalid': submitted && formGroup.get('SourceName')?.invalid }">
+              <mat-label label-sm>Source Name</mat-label>
+              <input matInput placeholder="Source Name" formControlName="SourceName" autocomplete="off">
+              <mat-error *ngIf="formGroup.get('SourceName')?.invalid && submitted">
+                Please enter Source Name
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" fxFlex.lt-sm="50">
+            <mat-form-field  appearance="outline">
+              <mat-label>Source Description</mat-label>
+              <input matInput placeholder="Source Desc" formControlName="SourceDesc" autocomplete="off">
+            </mat-form-field>
+          </div>
+
+          <div fxFlex="50" fxFlex.lt-sm="50">
+            <mat-checkbox formControlName="IsActive">Active</mat-checkbox>
+          </div>
+
+        </div>
+
+        <div class="card-footer text-center">
+          <button mat-raised-button color="primary" class="btn btn-primary" (click)="onSubmit()">
+            <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+            aria-hidden="true" data-mat-icon-type="font" class="_cursor">done
+            </mat-icon>Submit
+          </button>
+          <button mat-raised-button color="secondary" class="btn btn-secondary" (click)="onReset()">
+            <mat-icon role="img" class="mat-icon notranslate icon-36 material-icons mat-icon-no-color"
+            aria-hidden="true" data-mat-icon-type="font" class="_cursor">refresh
+            </mat-icon>Reset
+          </button>
+      </div>
+      </form>
+
+    <!-- <div fxFlex="100" fxFlex.lt-sm="100" class="matero-col">
+        <ag-grid-angular style="width: auto; height: 500px;" class="ag-theme-alpine" [rowData]="rowData"
+          [columnDefs]="columnDefs"
+          pagination="true"
+          >
+        </ag-grid-angular>
+    </div> -->
+    <!-- </mat-card> -->
+  </div>
+</div>
